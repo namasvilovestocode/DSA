@@ -12,3 +12,5 @@ int main() {
     cout << "First letter: " << c[0];
     return 0;
 }
+
+// String Basics like Length, Indexing etc have been covered
