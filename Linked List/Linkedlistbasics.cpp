@@ -86,10 +86,3 @@ int main() {
     return 0;
 }
 
-// Insertion at the beginning (head) of a linked list
-
-#include<bits/stdc++.h>
-using namespace std;
-
-
-

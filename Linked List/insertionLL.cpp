@@ -69,7 +69,7 @@ class SinglyLL {
         while(temp != NULL) {
             cnt++;
             if(cnt == i) {
-                Node* nnode = new Node;
+                Node* nnode = new Node;        //Whenever the position is found and equals count we insert the node in b/w
                 nnode -> val = num;
                 nnode -> ptr = temp -> ptr;
                 temp -> ptr = nnode;
