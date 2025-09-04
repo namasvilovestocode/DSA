@@ -85,4 +85,3 @@ int main() {
     cout << "Length of the linked list is: " << res;
     return 0;
 }
-
