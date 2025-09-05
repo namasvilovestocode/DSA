@@ -80,6 +80,67 @@ class SinglyLL {
         }
     }
 
+    // Deletion Operations
+
+    void del_beg() {
+        Node* temp = head;
+        head = head -> ptr;
+        delete temp;
+    }
+
+    void del_end() {
+        Node* temp = head;
+        Node* prev = NULL;
+
+        while(temp -> ptr != NULL) {
+            prev = temp;
+            temp = temp -> ptr;
+        }
+        prev -> ptr = NULL;
+        delete temp;
+    }
+
+    void del_el(int el) {
+        Node* temp = head;
+        Node* prev = NULL;
+
+        while(temp != NULL && temp -> val != el) {
+            prev = temp;
+            temp = temp -> ptr;
+        }
+
+        if(temp->val == el) {
+            prev -> ptr = temp -> ptr;
+            delete temp;
+        }
+
+        if(temp == NULL) {
+            cout << "Element not found";
+        }
+    }
+
+    void del_pos(int i) {
+        Node* temp = head;
+        Node* prev = NULL;
+        int cnt = 0;
+
+        if(i == 0) {
+            Node* del = head;
+            head = head -> ptr;
+            delete del;
+            return;
+        }
+
+        while(temp->ptr != NULL && cnt < i) {
+            prev = temp;
+            temp = temp -> ptr;
+            cnt++;
+        }
+
+        prev -> ptr = temp -> ptr;
+        delete temp;
+    }
+
     void printEl() {
         Node* temp = head;
         while(temp != NULL) {
@@ -98,10 +159,19 @@ int main() {
 
     obj1.ins_end(40);
     obj1.ins_end(50);
+    obj1.ins_end(60);
 
     obj1.ins_after_el(45,30);
 
     obj1.ins_pos(15,4);
+
+    obj1.del_beg();
+
+    obj1.del_end();
+
+    obj1.del_el(40);
+
+    obj1.del_pos(2);
 
     obj1.printEl();
 
